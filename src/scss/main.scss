@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+// Reset
+@import "node_modules/reset-css/reset.scss";
+
+// Variables
+@import 'utils/variables';
+
+// Mixins
+@import "utils/mixins";
+
+@import "styles";
