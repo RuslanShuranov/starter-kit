@@ -1,0 +1,17 @@
+@mixin respond-to($media) {
+  @if $media == small-screens {
+    @media (max-width: $small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media (min-width: $small + 1) and (max-width: $medium) { @content; }
+  }
+  @else if $media == large-screens {
+    @media (min-width: $medium + 1) and (max-width: $large) { @content; }
+  }
+  @else if $media == ex-large-screens {
+    @media (min-width: $ex-large) and (max-width: $huge) { @content; }
+  }
+  @else if $media == huge-screens {
+    @media (min-width: $huge + 1) { @content; }
+  }
+}

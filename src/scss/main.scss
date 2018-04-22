@@ -3,10 +3,17 @@
 // Reset
 @import "node_modules/reset-css/reset.scss";
 
+// Grid
+@import "node_modules/flexbox-grid-sass/src/flexbox-grid.scss";
+
 // Variables
 @import 'utils/variables';
 
 // Mixins
 @import "utils/mixins";
 
+
 @import "styles";
+
+// Components
+@import "components/grid";
