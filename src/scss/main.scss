@@ -1,19 +1,14 @@
 @charset "utf-8";
 
-// Reset
+// Reset CSS
 @import "node_modules/reset-css/reset.scss";
 
-// Grid
-@import "node_modules/flexbox-grid-sass/src/flexbox-grid.scss";
-
-// Variables
+// Utils
 @import 'utils/variables';
-
-// Mixins
 @import "utils/mixins";
 
+// Grid
+@import "grid/grid";
 
+// Global styles
 @import "styles";
-
-// Components
-@import "components/grid";

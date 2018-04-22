@@ -1,0 +1,18 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  @include container(medium-screens) {
+    max-width: $small-container;
+  }
+  @include container(large-screens) {
+    max-width: $medium-container;
+  }
+  @include container(ex-large-screens) {
+    max-width: $large-container;
+  }
+  @include container(huge-screens) {
+    max-width: $huge-container;
+  }
+}
