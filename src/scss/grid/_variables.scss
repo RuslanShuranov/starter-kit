@@ -1,23 +1,18 @@
-// Columns count
 $columns:                                 12 !default;
-
-// Container breakpoints
-$small-breakpoint:                        768px !default;
-$medium-breakpoint:                       992px !default;
-$large-breakpoint:                        1024px !default;
-$huge-breakpoint:                         1200px !default;
-
-// Container width
-$small-container:                         540px !default;
-$medium-container:                        720px !default;
-$large-container:                         960px !default;
-$huge-container:                          1170px !default;
+$gutter:                                  30px !default;
 
 // Grid breakpoints
 $breakpoints: (
-        ex-small: 0,
         small: 545px,
         medium: 768px,
         large: 992px,
-        huge: 1200px
+        huge: 1200px,
+) !default;
+
+// Container widths
+$container-widths: (
+        small: 540px,
+        medium: 720px,
+        large: 960px,
+        huge: 1170px
 ) !default;
