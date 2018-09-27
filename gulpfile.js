@@ -30,7 +30,7 @@ gulp.task('styles', function () {
     .pipe(plumber({errorHandler: handleError}))
     .pipe(concat('main.min.css'))
     .pipe(sourcemaps.init())
-    // .pipe(scss({outputStyle: 'compressed', includePaths: SASS_INCLUDE_PATHS}))
+    .pipe(scss({outputStyle: 'compressed', includePaths: SASS_INCLUDE_PATHS}))
     .pipe(scss({includePaths: SASS_INCLUDE_PATHS}))
     .pipe(autoprefixer({browsers: ['last 2 versions', 'safari 8', 'ie 11', 'opera 12.1', 'ios 6', 'android 4']}))
     .pipe(sourcemaps.write())
