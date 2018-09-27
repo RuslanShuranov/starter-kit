@@ -1,0 +1,51 @@
+@mixin column($columns) {
+  @for $number from 0 through $columns {
+    @if $number == 0 {
+      & {
+        flex-grow: 1;
+        flex-basis: 0;
+        width: 100%;
+      }
+    } @else {
+      &-#{$number} {
+        $width-calc: (100 / $columns * $number)#{'%'};
+        $flex-calc: (100 / $columns * $number)#{'%'};
+        width: $width-calc;
+        flex: 0 0 $flex-calc;
+      }
+    }
+  }
+}
+
+@mixin offset-column($columns) {
+  @for $number from 1 through ($columns - 1) {
+    &-offset-#{$number} {
+      margin-left: (100 / $columns * $number)#{'%'};
+    }
+  }
+}
+
+@mixin grid-column($breakpoint, $columns) {
+  .#{$breakpoint} {
+    @include column($columns);
+    @include offset-column($columns);
+  }
+}
+
+@mixin grid-columns($breakpoints-map, $breakpoints, $columns) {
+  @each $width in $breakpoints {
+    @each $breakpoint in $breakpoints-map {
+      @for $number from 0 through $columns {
+        $col-no-num: #{$breakpoint};
+        $col-num: #{$breakpoint}-#{$number};
+        $find-col: #{$columns-prefix}-#{if($number != 0, $col-num, $col-no-num)};
+        .#{$find-col} {
+          @extend %global-colums-style;
+        }
+      }
+      @media (min-width: $width) {
+        @include grid-column(#{$columns-prefix}-#{$breakpoint}, $columns);
+      }
+    }
+  }
+}

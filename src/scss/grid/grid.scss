@@ -1,5 +1,7 @@
 @import "variables";
-@import "grid-mixins";
+@import "mixins/breakpoint";
+@import "mixins/grid";
+@import "mixins/container";
 @import "container";
 
-@include grid-columns($breakpoints, $columns);
+@include grid-columns($breakpoints-map, $breakpoints, $columns);
